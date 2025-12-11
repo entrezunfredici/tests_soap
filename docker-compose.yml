@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  spring-ws-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: spring-ws-service:latest
+    container_name: spring-ws-service
+    ports:
+      - "8080:8080"
+    environment:
+      JAVA_TOOL_OPTIONS: "-Xms256m -Xmx512m"
+    restart: unless-stopped
