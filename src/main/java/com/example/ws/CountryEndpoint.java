@@ -23,4 +23,12 @@ public class CountryEndpoint {
         response.setCountry(repository.findCountry(request.getName()));
         return response;
     }
+
+    @PayloadRoot(namespace = NAMESPACE, localPart = "listCountriesRequest")
+    @ResponsePayload
+    public ListCountriesResponse listCountries(@RequestPayload ListCountriesRequest request) {
+        ListCountriesResponse response = new ListCountriesResponse();
+        response.getCountries().addAll(repository.findAllCountries());
+        return response;
+    }
 }

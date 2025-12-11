@@ -2,6 +2,8 @@ package com.example.ws;
 
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -20,5 +22,9 @@ public class CountryRepository {
 
     public String findCountry(String name) {
         return countries.getOrDefault(name, "Unknown");
+    }
+
+    public List<String> findAllCountries() {
+        return new ArrayList<>(countries.keySet());
     }
 }

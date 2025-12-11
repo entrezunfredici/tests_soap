@@ -19,4 +19,16 @@
         </xs:complexType>
     </xs:element>
 
+    <xs:element name="listCountriesRequest">
+        <xs:complexType/>
+    </xs:element>
+
+    <xs:element name="listCountriesResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="country" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
 </xs:schema>
